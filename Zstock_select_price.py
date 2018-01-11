@@ -12,13 +12,13 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 class select_class():
     def __init__(self):
-        self.bases_save=ts.get_stock_basics()
-        self.bases_save.to_csv('bases.csv')
+#        self.bases_save=ts.get_stock_basics()
+#        self.bases_save.to_csv('bases.csv')
 
         # 因为网速问题，手动从本地抓取
         self.today = time.strftime("%Y-%m-%d", time.localtime())
-        self.base = pd.read_csv('bases.csv', dtype={'code': np.str})
-        self.all_code = self.base['code'].values
+#        self.base = pd.read_csv('bases.csv', dtype={'code': np.str})
+#        self.all_code = self.base['code'].values
     def get_price(self,stock_code,stock_name):
         stock_price = ts.get_hist_data(stock_code, ktype='M')
         stock_price.to_csv('stock_price.csv')
@@ -66,7 +66,7 @@ class select_class():
         print(stock_code)
         print(unicode(stock_name,"utf-8")) 
         print '----------------------------'
-        print(df2)
+        print(df2.sort_values(by='date'))
         df2.to_csv(stock_code+unicode(stock_name,"utf-8") + '.csv')
 #        print(df.head(2))
 
