@@ -34,7 +34,7 @@ class select_class():
 #        select_stock = stock_online.loc[(stock_online['pepb'] < 22.5) & (stock_online['pepb'] >0)]
 #        select_stock.to_csv('select.csv',encoding='gbk')
         #策略思想2，pe小于15倍，pb小于1.5倍
-#        select_stock2 = stock_online.loc[(stock_online['pe'] < 15) & (stock_online['pe'] >0) & (stock_online['pb'] < 1.5) & (stock_online['gpr']!=0)]
+        select_stock2 = stock_online.loc[(stock_online['pe'] < 15) & (stock_online['pe'] >0) & (stock_online['pb'] < 1.5) & (stock_online['gpr']!=0)]
         select_stock3 = stock_online.loc[(stock_online['pe'] < 15) & (stock_online['pe'] >0) & (stock_online['pb'] < 1.5) & (stock_online['gpr']!=0),["code","name","industry", "area","pe","pb"]]
         select_stock3.to_csv('select_stock_prod.csv',encoding='gbk')
 #        select_stock2.to_csv('select_stock.csv',encoding='gbk')
