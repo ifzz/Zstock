@@ -37,6 +37,12 @@ class HTClientTrader():
     def buy(self,code,count):
        self._app.top_window().Edit1.type_keys(code)
        self._app.top_window().Edit2.type_keys('')
+       pyautogui.typewrite(['backspace'], interval=secs_between_keys)
+       pyautogui.typewrite(['backspace'], interval=secs_between_keys)
+       pyautogui.typewrite(['backspace'], interval=secs_between_keys)
+       pyautogui.typewrite(['backspace'], interval=secs_between_keys)
+       pyautogui.typewrite(['backspace'], interval=secs_between_keys)
+       self._app.top_window().Edit2.type_keys('3.65')
        self._app.top_window().Edit3.type_keys(count)
        pyautogui.typewrite(['B'], interval=secs_between_keys)
        pyautogui.typewrite(['Y'], interval=secs_between_keys)
