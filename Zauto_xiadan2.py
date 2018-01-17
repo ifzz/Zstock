@@ -57,16 +57,9 @@ class HTClientTrader():
 if __name__ == "__main__":
 #######华泰客户端登录
     app_dir = r'C:\htzqzyb2\xiadan.exe'
-    user='666628971947'
-    passwd='880305'
-    comm_password='ly6793645@7101'
-#    app=pywinauto.Application().start(app_dir)
-#    time.sleep(1)
-#    app.top_window().Edit1.type_keys('666628971947')
-#    app.top_window().Edit2.type_keys('880305')
-#    app.top_window().Edit3.type_keys('ly6793645@7101')
-#    app.top_window().type_keys('%Y')
-#    time.sleep(1)
+    user='xxx'
+    passwd='xxx'
+    comm_password='xxxx@7101'
     app=HTClientTrader()
     app.login(user,passwd,app_dir,comm_password)
     secs_between_keys = 1
