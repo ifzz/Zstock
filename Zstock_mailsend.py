@@ -90,6 +90,9 @@ def compare_price(code, price_down, price_up):
     pre_close = float(df['pre_close'].values[0])
     time.sleep(1)
     logger.info('证券名称:%s 当前价格:%.2f ,昨日收盘价:%.2f', name, real_price,pre_close)
+    if real_price == 0:
+        print '%s real_price %.2f is zero,go on' % (name, real_price),
+        return 0
     if real_price >= price_up:
         percent_up = (real_price - price_up) / price_up * 100
         print 'percent : %.2f\n' % (percent_up),
