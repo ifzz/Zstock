@@ -21,7 +21,7 @@ class HTClientTrader():
             raise ValueError('华泰客户端必须设置通讯密码')
 
         try:
-            self._app = pywinauto.Application().connect(path=self._run_exe_path(exe_path), timeout=1)
+            self._app = pywinauto.Application().connect(path=self._run_exe_path(exe_path), timeout=0.5)
         except Exception:
             self._app = pywinauto.Application().start(exe_path)
 
@@ -34,7 +34,7 @@ class HTClientTrader():
 
             # detect login is success or not
             self._app.top_window().wait_not('exists', 10)
-    def buy(self,code,count):
+    def buy(self, code, price, count,secs_between_keys):
        self._app.top_window().Edit1.type_keys(code)
        self._app.top_window().Edit2.type_keys('')
        pyautogui.typewrite(['backspace'], interval=secs_between_keys)
@@ -42,7 +42,7 @@ class HTClientTrader():
        pyautogui.typewrite(['backspace'], interval=secs_between_keys)
        pyautogui.typewrite(['backspace'], interval=secs_between_keys)
        pyautogui.typewrite(['backspace'], interval=secs_between_keys)
-       self._app.top_window().Edit2.type_keys('3.65')
+       self._app.top_window().Edit2.type_keys(price)
        self._app.top_window().Edit3.type_keys(count)
        pyautogui.typewrite(['B'], interval=secs_between_keys)
        pyautogui.typewrite(['Y'], interval=secs_between_keys)
@@ -50,14 +50,14 @@ class HTClientTrader():
 if __name__ == "__main__":
 #######华泰客户端登录
     app_dir = r'C:\htzqzyb2\xiadan.exe'
-    user='xxxxxx'
-    passwd='xxxx'
-    comm_password='xxxxxxxxx'
+    user='xxxxx'
+    passwd='xxxxx'
+    comm_password='xxxxx'
     app=HTClientTrader()
     app.login(user,passwd,app_dir,comm_password)
-    secs_between_keys = 0.5
+    secs_between_keys = 2
     pyautogui.typewrite(['f1'], interval=secs_between_keys)
-    app.buy('600170',500)
+    app.buy('600170','3.65', 500,0.05)
     time.sleep(5)
     
     os.system("taskkill /F /IM xiadan.exe")
