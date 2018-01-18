@@ -70,8 +70,6 @@ class select_class():
         df2.to_csv(stock_code+unicode(stock_name,"utf-8") + '.csv')
 #        print(df.head(2))
 
-
-
 def main():
     current = os.getcwd()
     folder = os.path.join(current, 'data')
