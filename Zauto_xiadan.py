@@ -59,5 +59,4 @@ if __name__ == "__main__":
     pyautogui.typewrite(['f1'], interval=secs_between_keys)
     app.buy('600170','3.65', 500,0.05)
     time.sleep(5)
-    
     os.system("taskkill /F /IM xiadan.exe")
