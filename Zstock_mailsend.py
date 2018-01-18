@@ -19,7 +19,6 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 logging.config.fileConfig('logging.conf')
 logger = logging.getLogger('stock_memssage')
-
 class MailSend():
     def __init__(self, smtp_server, from_mail, password, to_mail):
         self.server = smtp_server
