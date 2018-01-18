@@ -66,7 +66,6 @@ class HTClientTrader():
 def read_stock(name):
     f = open(name)
     stock_list = []
-
     for s in f.readlines():
         s = s.strip()
         row = s.split(';')
