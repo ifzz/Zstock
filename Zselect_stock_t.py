@@ -50,7 +50,6 @@ class select_class():
 #		stock_growth_online2.to_csv('stock_growth2.csv',encoding='gbk')
         return list_stock_code
 
-
 def main():
     current = os.getcwd()
     folder = os.path.join(current, 'data')
