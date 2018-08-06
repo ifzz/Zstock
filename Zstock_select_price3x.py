@@ -93,8 +93,8 @@ def main():
     df_000415=obj.get_price('000415','渤海金控')
     df_600028=obj.get_price('600028','中国石化')
 ###########
-    df_000589=obj.get_price('000589','黔轮胎A')
-    df_600635=obj.get_price('600635','大众公用')
+    df_600635=obj.get_price('600635','南方航空')
+    df_600104=obj.get_price('600104','上汽集团')	
 
 if __name__ == "__main__":
     start_time=datetime.datetime.now()
