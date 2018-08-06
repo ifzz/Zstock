@@ -1,4 +1,4 @@
-###windows端
+#windows端运行Zstock
 
 **1.部署Python 3.x版**
 
@@ -25,7 +25,7 @@ pip install bs4
 ```
 
 **3.运行demo例子**
-```python
+```bash
 D:\Zstock-master>python Zstock_select_price3x.py
 ---------stock code---------
 600104
