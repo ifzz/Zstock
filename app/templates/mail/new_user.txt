@@ -1,0 +1,2 @@
+用户 {{ user.username }} 已经加入.
+插入至MySQL数据库中.
